@@ -1,5 +1,6 @@
 import sys
 import os
+from sensor.logger import logging
 
 def error_msg_detail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
@@ -9,7 +10,7 @@ def error_msg_detail(error,error_detail:sys):
     filename,exc_tb.tb_lineno,str(error))
     return error_msg
 
-
+    
 class SensorException(Exception):
     def __init__(self,error_msg,error_detail:sys):
         super().__init__(error_msg)
